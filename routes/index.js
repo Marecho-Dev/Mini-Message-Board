@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 const Message = require('../models/message');
 
-var messages = require('./messagesModule');
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   try {

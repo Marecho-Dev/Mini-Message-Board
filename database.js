@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 // See: https://mongoosejs.com/docs/migrating_to_6.html#strictquery-is-removed-and-replaced-by-strict
 mongoose.set("strictQuery", false);
 const mongoURI = process.env.MONGODB_URI;
-console.log(mongoURI)
+
 // Define the database URL to connect to.
 const mongoDB = mongoURI;
 
