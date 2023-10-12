@@ -17,11 +17,13 @@ router.get('/', function(req, res, next) {
   router.post('/', function(req, res, next) {
     // Get the message from the request body (you'd typically use middleware like body-parser for this)
     const text = req.body.text;
+    const user = req.body.user;
+    
     
     // Add the new message to the messages array
     messages.unshift({
       text: text,
-      user: "Anonymous", // Or fetch the username from session or another source
+      user: user, // Or fetch the username from session or another source
       added: new Date()
     });
     

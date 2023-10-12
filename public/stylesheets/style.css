@@ -14,3 +14,14 @@ a {
   margin: 10px 0;
   border-radius: 5px;
 }
+
+.textBox{
+  display:flex;
+  flex-direction: column;
+  width:30vw;
+  gap: 5px;
+}
+
+.postButton{
+  margin-top:5px;
+}

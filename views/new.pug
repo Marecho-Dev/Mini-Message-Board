@@ -3,8 +3,11 @@ extends layout
 block content
   h1= title
   form(method="post" action="/new")
-    div
+    div.textBox
+      label(for="user") name:
+      input(name="user" id="user" rows="4" cols="50" required)
+    div.textBox
       label(for="text") Message:
       textarea(name="text" id="text" rows="4" cols="50" required)
-    div
+    div.postButton
       button(type="submit") Post Message
