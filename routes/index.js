@@ -5,7 +5,7 @@ var router = express.Router();
 var messages = require('./messagesModule');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Message Board', messages: messages });
+  res.render('index', { title: 'Mini Messageboard', messages: messages });
 });
 
 
