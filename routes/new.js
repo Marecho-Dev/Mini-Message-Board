@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const Message = require('../models/message');
+
 // GET /new to display the form
 
 
@@ -14,21 +16,25 @@ router.get('/', function(req, res, next) {
   });
   
   // POST /new to handle form submission
-  router.post('/', function(req, res, next) {
+  router.post('/', async function(req, res, next) {
     // Get the message from the request body (you'd typically use middleware like body-parser for this)
     const text = req.body.text;
     const user = req.body.user;
     
     
     // Add the new message to the messages array
-    messages.unshift({
-      text: text,
-      user: user, // Or fetch the username from session or another source
-      added: new Date()
-    });
+    const newMessage = new Message({
+        text: text,
+        user: user,
+        added: new Date()
+      });
+      try {
+        await newMessage.save();
+        res.redirect('/');
+      } catch(err) {
+        next(err); // Handle the error, maybe render an error page or something
+      }
     
-    // Redirect back to the main page
-    res.redirect('/');
   });
   
 
