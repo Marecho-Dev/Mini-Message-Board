@@ -2,6 +2,8 @@ extends layout
 
 block content
   h1= title
+  form(action="/new" method="get")
+    button(type="submit") Post
   each message in messages
     .message
       p.text= message.text
